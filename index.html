@@ -17,26 +17,29 @@
     <div class="container">
         <div class="row h-100 justify-content-center my-5">
             <form class="offset-3 col-6 ">
-                <div class="form-check form-switch">
+                <!--<div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
                     <label class="form-check-label" for="flexSwitchCheckDefault">Items</label>
                 </div>
                 <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">NPCs</label>
-                </div>
+                </div>-->
 
-                <button id="search_random_btn" type="button" class="btn btn-primary">Randomize item</button>
+                <button id="search_random_btn" type="button" class="btn btn-primary m-3">Randomize item</button>
+                <p>
+                    <a id="displayed_item" href="" target="_blank"></a>
+                </p>
+                <div id="images">
+
+                </div>
             </form>
         </div>
     </div>
-
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
-    <script type="module" src="./app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
