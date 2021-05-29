@@ -1,12 +1,24 @@
 let search_btn = document.getElementById("search_random_btn");
 let item_holder = document.getElementById("displayed_item");
 let images = document.getElementById("images");
+let npcs_check = document.getElementById('npcs_check');
+let items_check = document.getElementById('items_check');
+
 items = [];
+npcs = [];
 
 search_btn.addEventListener('click', event => {
-    let item = items[Math.floor(Math.random() * items.length)];
-    item_holder.setAttribute("href", item.url);
-    item_holder.innerText = item.url
+    let entries = [];
+    if (npcs_check.checked) {
+        entries.concat(npcs);
+    }
+    if (items_check.checked) {
+        entries.concat(items);
+    }
+
+    let entry = entries[Math.floor(Math.random() * entries.length)];
+    item_holder.setAttribute("href", entry.url);
+    item_holder.innerText = entry.url
     /*while (images.firstChild) {
         images.removeChild(images.firstChild);
     }
@@ -20,7 +32,13 @@ search_btn.addEventListener('click', event => {
 fetch("file.json")
     .then(resp => resp.json())
     .then(data => {
-        items = data;
+        data.forEach(entry => {
+            if (entry.category == 'Items') {
+                items.push(entry);
+            } else if (entry.category == 'Non-player characters') {
+                npcs.push(entry);
+            }
+        })
     });
 
 /*function loadFile() {
