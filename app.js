@@ -10,10 +10,10 @@ npcs = [];
 search_btn.addEventListener('click', event => {
     let entries = [];
     if (npcs_check.checked) {
-        entries.concat(npcs);
+        entries = entries.concat(npcs);
     }
     if (items_check.checked) {
-        entries.concat(items);
+        entries = entries.concat(items);
     }
 
     let entry = entries[Math.floor(Math.random() * entries.length)];
